@@ -3,6 +3,7 @@
 # include <string>
 # include <iostream>
 # include <sstream>
+# include <climits>
 
 # define INT 0
 # define CHAR 1
