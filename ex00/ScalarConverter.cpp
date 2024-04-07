@@ -33,6 +33,7 @@ static int is_pseudo_lit(std::string s)
 	else
 		return (-1);
 }
+
 /*
 1) one character input
 2) no dot - int assumed
@@ -63,9 +64,10 @@ static int gettype(std::string s)
 		}
 		else
 			type = DOUBLE;
-		s.erase(pos, 1);
-		if (s.length() == 0)
+		if (pos == s.length() - 1 || pos == 0)
 			return (-1);
+		else
+			s.erase(pos, 1);
 	}
 	if (s.at(0) == '+' || s.at(0) == '-')
 		s.erase(0, 1);
@@ -149,11 +151,11 @@ void ScalarConverter::convert(const std::string s)
 			exit(0);
 		}
 	}
-	if (int_val < CHAR_MIN || int_val > CHAR_MAX)
+	if (int_val > CHAR_MAX || int_val < 0)
 		std::cout << "char: " << "impossible" << "\n";
 	else if ((char_val >= 0 && char_val < 33) || char_val == 127)
 		std::cout << "char: " << "non-displayable" << "\n";
-	else if (int_val <= CHAR_MAX && int_val > 0)
+	else if (int_val > 0 && int_val <= CHAR_MAX)
 		std::cout << "char: " << char_val << "\n";
 	if (float_val >= INT_MIN && float_val <= INT_MAX)
 		std::cout << "int: " << int_val << "\n";
