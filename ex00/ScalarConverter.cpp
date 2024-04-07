@@ -156,7 +156,7 @@ void ScalarConverter::convert(const std::string s)
 	else if ((char_val >= 0 && char_val < 33) || char_val == 127)
 		std::cout << "char: " << "non-displayable" << "\n";
 	else if (int_val > 0 && int_val <= CHAR_MAX)
-		std::cout << "char: " << char_val << "\n";
+		std::cout << "char: \'" << char_val << "\'\n";
 	if (float_val >= INT_MIN && float_val <= INT_MAX)
 		std::cout << "int: " << int_val << "\n";
 	else
