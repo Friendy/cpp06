@@ -4,10 +4,10 @@
 # include <iostream>
 
 struct Data{
-    int data_int;
-    std::string data_str;
-    float data_float;
-    void printme();
+	int data_int;
+	std::string data_str;
+	float data_float;
+	void printme();
 };
 
 #endif

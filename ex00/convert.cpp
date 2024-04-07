@@ -2,11 +2,15 @@
 
 int main(int argc, char *argv[])
 {
-	// float test = 545.6f;
 	std::string s;
-	if (argc > 1)
+	std::string t;
+	std::stringstream ss;
+	if (argc != 2)
+	{
+		std::cerr << "error: wrong number of arguments\n";
+		exit(0);
+	}
+	if (argc == 2)
 		s.append(argv[1]);
-	int c = s.find("nan");
-	std::cout << "t " << c << "\n";
 	ScalarConverter::convert(s);
 }

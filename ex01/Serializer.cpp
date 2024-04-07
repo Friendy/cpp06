@@ -7,7 +7,7 @@ Serializer::Serializer()
 }
 
 //Assignment operator:
-Serializer &Serializer::operator=(Serializer const &original)
+Serializer &Serializer::operator=(Serializer const &)
 {
 	return(*this);
 }

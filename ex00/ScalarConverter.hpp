@@ -4,12 +4,12 @@
 # include <iostream>
 # include <sstream>
 # include <climits>
+# include <iomanip>
 
 # define INT 0
 # define CHAR 1
 # define FLOAT 2
 # define DOUBLE 3
-
 
 class ScalarConverter {
 

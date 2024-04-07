@@ -3,20 +3,16 @@
 
 int main()
 {
-    Data data;
-    data.data_int = 78;
-    data.data_float = 89.09;
-    data.data_str = "jjkkko";
-    data.printme();
-    Data *data1;
-    uintptr_t ptr;
-    ptr = Serializer::serialize(&data);
-    std::cout << "converted: " << ptr << "\n";
-    data1 = Serializer::deserialize(ptr);
-    data1->printme();
-    // std::cout << "orig" << &data << "\n";
-   
-    // std::cout << "back" << data1 << "\n";
-    
+	Data data;
+	Data *data1;
 
+	data.data_int = 123;
+	data.data_float = 42.42;
+	data.data_str = "my string";
+	data.printme();
+	uintptr_t ptr;
+	ptr = Serializer::serialize(&data);
+	std::cout << "converted: " << ptr << "\n";
+	data1 = Serializer::deserialize(ptr);
+	data1->printme();
 }
